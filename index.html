@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ysb.transportation.com — Y.S.B Transportation Co., Ltd</title>
+  <meta name="description" content="Y.S.B Transportation — Fast. Reliable. Global Logistics. Import & export, worldwide logistics and freight services." />
+  <!-- Favicon (simple SVG with YSB letters) -->
+  <link rel="icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><rect width="100%" height="100%" fill="%23ff7a00"/><text x="50%" y="56%" font-family="Arial,Helvetica,sans-serif" font-size="30" text-anchor="middle" fill="white" font-weight="700">YSB</text></svg>' />
+  <style>
+    :root{
+      --accent:#ff7a00;
+      --navy:#0b4a6f;
+      --muted:#6b7280;
+      --bg:#ffffff;
+      --card:#fff;
+      --glass: rgba(11,74,111,0.06);
+      --maxw:1200px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,"Noto Sans",sans-serif;color:#111;background:var(--bg);-webkit-font-smoothing:antialiased}
+    .container{max-width:var(--maxw);margin:0 auto;padding:1rem}
+    /* Header */
+    header.site-header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:120}
+    .header-inner{display:flex;align-items:center;gap:1rem;padding:.6rem 0}
+    .brand{display:flex;gap:.6rem;align-items:center}
+    .brand img{width:56px;height:56px;border-radius:8px;object-fit:cover;border:2px solid var(--glass)}
+    .brand-text h1{margin:0;font-size:1rem;color:var(--navy)}
+    .brand-text p{margin:0;font-size:.78rem;color:var(--muted)}
+    nav.nav{margin-left:auto;display:flex;gap:.5rem;align-items:center}
+    nav.nav a{padding:.5rem .6rem;border-radius:8px;text-decoration:none;color:inherit;font-size:.95rem}
+    nav.nav a:hover{background:#f3f5f7}
+    button.cta{margin-left:1rem;background:var(--accent);color:#fff;border:0;padding:.45rem .7rem;border-radius:8px;cursor:pointer}
+    /* Hero */
+    .hero{padding:2.2rem 0}
+    .hero-inner{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+    .hero-text{flex:1;min-width:260px}
+    .hero-text h2{margin:0 0 .6rem;font-size:1.9rem;color:var(--navy)}
+    .hero-text p.lead{margin:0 0 1rem;color:var(--muted)}
+    .hero-actions{display:flex;gap:.6rem;flex-wrap:wrap}
+    .btn{display:inline-block;padding:.6rem .9rem;border-radius:8px;text-decoration:none;border:1px solid var(--navy);background:#fff;color:var(--navy);cursor:pointer}
+    .btn-primary{background:var(--accent);color:#fff;border:0}
+    .hero-image{flex:0 0 520px;max-width:48%}
+    .hero-image img{width:100%;height:auto;border-radius:12px;object-fit:cover;display:block;box-shadow:0 8px 30px rgba(11,74,111,0.08)}
+    /* Sections */
+    .section{padding:2rem 0}
+    h3{font-size:1.35rem;margin:0 0 .6rem;color:var(--navy)}
+    .muted{color:var(--muted)}
+    /* Services cards */
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    .card{background:var(--card);padding:1rem;border-radius:10px;border:1px solid #eee;box-shadow:0 6px 18px rgba(11,74,111,0.03)}
+    .card h4{margin:.1rem 0 .4rem;color:var(--navy)}
+    /* Grid features */
+    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    .feature{background:#fff;padding:1rem;border-radius:10px;border:1px solid #eee;min-height:120px}
+    /* Fleet, gallery */
+    .fleet-grid,.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.6rem}
+    .fleet-grid img,.gallery-grid img{width:100%;height:160px;object-fit:cover;border-radius:8px;display:block}
+    /* Partners/testimonials */
+    .partners{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+    .partner-logo{width:120px;height:48px;background:#f6f6f6;border-radius:6px;display:flex;align-items:center;justify-content:center;border:1px solid #eee;color:var(--muted);font-size:.9rem}
+    .testimonial{background:#fff;padding:1rem;border-radius:10px;border:1px solid #eee}
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    label{display:block;margin-bottom:.6rem}
+    input,textarea{width:100%;padding:.6rem;border-radius:8px;border:1px solid #ddd}
+    .form-actions{display:flex;gap:.6rem;margin-top:.6rem}
+    /* Footer */
+    footer.site-footer{border-top:1px solid #eee;padding:1rem 0;margin-top:1.2rem;background:#fff}
+    .footer-inner{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
+    .socials a{margin-right:.6rem;text-decoration:none;color:var(--navy)}
+    /* Chat widget */
+    .chat-toggle{position:fixed;right:18px;bottom:18px;background:var(--accent);color:#fff;border:0;padding:12px;border-radius:50%;font-size:20px;cursor:pointer;z-index:200}
+    .chat{position:fixed;right:18px;bottom:70px;width:360px;max-height:65vh;background:#fff;border-radius:10px;box-shadow:0 8px 30px rgba(11,74,111,0.12);display:flex;flex-direction:column;overflow:hidden;z-index:200}
+    .chat[aria-hidden='true']{display:none}
+    .chat-header{display:flex;justify-content:space-between;align-items:center;padding:.6rem 1rem;border-bottom:1px solid #eee;background:linear-gradient(90deg, rgba(11,74,111,0.03), rgba(255,122,0,0.03))}
+    .chat-messages{padding:1rem;overflow:auto;flex:1}
+    .msg{padding:.6rem .9rem;border-radius:12px;margin-bottom:.6rem;max-width:85%}
+    .msg.user{background:var(--navy);color:#fff;margin-left:auto}
+    .msg.bot{background:#f3f5f7;color:#111}
+    .chat-form{display:flex;border-top:1px solid #eee}
+    .chat-form input{flex:1;padding:.6rem;border:0}
+    .chat-form button{border:0;padding:.6rem 1rem;background:var(--navy);color:#fff}
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.75);display:none;align-items:center;justify-content:center;z-index:300}
+    .lightbox img{max-width:95%;max-height:90%;border-radius:8px}
+    .lightbox.show{display:flex}
+    /* Animations */
+    .fade-in{opacity:0;transform:translateY(8px);transition:all .6s ease}
+    .fade-in.visible{opacity:1;transform:none}
+    @media (max-width:900px){
+      .hero-image{max-width:100%;flex-basis:100%}
+      nav.nav{display:none}
+      .contact-grid{grid-template-columns:1fr}
+      .hero-text h2{font-size:1.4rem}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand" aria-hidden="false">
+        <img src="https://scontent.fpnh24-1.fna.fbcdn.net/v/t39.30808-6/558670236_122099733261063039_5207644231692710049_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFa1y3nO5NMUlKFKqBdWO_L5voOX8V41Yfm-g5fxXjVh2Bq30DF9ducSaAMGFurYOYTo8FjDgcATFR15nYqdrHK&_nc_ohc=I9DSkUCJLKAQ7kNvwFsLMJF&_nc_oc=Adml6crOVMZwwmpIV3qf6O4ecWuCPHbc6ZdFKHGLKSzQiM49UwGIIxrY1WcEwNyNbX8&_nc_zt=23&_nc_ht=scontent.fpnh24-1.fna&_nc_gid=ASxTXjcqIoJKY0cjxMzcag&oh=00_AfjLrxQUDPS0TSUfobWAciRc0SdgKS60-NfuPjFqRQE7Tg&oe=690CEB05" alt="YSB Logo">
+        <div class="brand-text">
+          <h1>Y.S.B Transportation</h1>
+          <p>Fast. Reliable. Global Logistics. · Founded 2019</p>
+        </div>
+      </div>
+
+      <nav class="nav" role="navigation" aria-label="Main nav">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request a Quote</button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero" aria-label="Home">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h2 class="fade-in">Delivering beyond borders — reliable import & export.</h2>
+          <p class="lead muted fade-in">We import and export products worldwide. We’ll do our best to get you what you need and want — fast, reliable, and global.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#services">Our Services</a>
+            <a class="btn btn-primary" href="#contact">Contact Us</a>
+          </div>
+        </div>
+        <div class="hero-image fade-in" aria-hidden="false">
+          <img alt="YSB trucks" src="https://scontent.fpnh24-1.fna.fbcdn.net/v/t39.30808-6/561813586_122099520909063039_6493472705383341403_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeF6lC3Sg_BKbZM5Ok_OyF0keSGici3sogB5IaJyLeyiALpPPPxRfnWISxR5G8EbkFbFxy52aXINOgG25kDmB_h4&_nc_ohc=TgLuBe0HlmUQ7kNvwFt5QYm&_nc_oc=Adm4DoWwk4BRkHPU6PV0kETeFgsJ4ZOiWdaj9AsuRO6EtGnp58yx_CKe07BiiYYBlwM&_nc_zt=23&_nc_ht=scontent.fpnh24-1.fna&_nc_gid=NctBHm3EJg-TXi0e2ieg8w&oh=00_Afhi3dj-YhA2GVFbOta_85gALu4xCMTjAuk7coPd78ddhA&oe=690CCF33">
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section" aria-label="Services">
+      <div class="container">
+        <h3 class="fade-in">Our Services</h3>
+        <p class="muted fade-in">Comprehensive logistics, tailored to your needs.</p>
+        <div class="cards" role="list">
+          <article class="card fade-in" role="listitem">
+            <h4>Freight Forwarding</h4>
+            <p>International freight by sea, air and land with customs documentation and secure handling.</p>
+          </article>
+          <article class="card fade-in" role="listitem">
+            <h4>Import & Export</h4>
+            <p>Full import/export support: paperwork, customs clearance, and door-to-door delivery.</p>
+          </article>
+          <article class="card fade-in" role="listitem">
+            <h4>Logistics Management</h4>
+            <p>Warehousing, inventory management, and logistics planning to minimize delays and costs.</p>
+          </article>
+          <article class="card fade-in" role="listitem">
+            <h4>Consulting & Tracking</h4>
+            <p>Real-time tracking and logistics consulting so you know where your goods are—always.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE -->
+    <section id="why" class="section" aria-label="Why choose us">
+      <div class="container">
+        <h3 class="fade-in">Why Choose Y.S.B</h3>
+        <p class="muted fade-in">Four reasons customers trust us</p>
+        <div class="grid-3">
+          <div class="feature fade-in"><h4>Global Network</h4><p>Trusted partners around the world to manage cross-border shipments smoothly.</p></div>
+          <div class="feature fade-in"><h4>Fast Clearance</h4><p>Experienced team ensures paperwork and regulations are handled correctly and quickly.</p></div>
+          <div class="feature fade-in"><h4>24/7 Support</h4><p>Customer service and shipment tracking to keep you informed at every step.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLEET -->
+    <section id="fleet" class="section" aria-label="Fleet and equipment">
+      <div class="container">
+        <h3 class="fade-in">Fleet & Equipment</h3>
+        <p class="muted fade-in">Modern vehicles and secure cargo handling.</p>
+        <div class="fleet-grid">
+          <img class="fade-in" src="https://scontent.fpnh24-1.fna.fbcdn.net/v/t39.30808-6/561813586_122099520909063039_6493472705383341403_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeF6lC3Sg_BKbZM5Ok_OyF0keSGici3sogB5IaJyLeyiALpPPPxRfnWISxR5G8EbkFbFxy52aXINOgG25kDmB_h4&_nc_ohc=TgLuBe0HlmUQ7kNvwFt5QYm&_nc_oc=Adm4DoWwk4BRkHPU6PV0kETeFgsJ4ZOiWdaj9AsuRO6EtGnp58yx_CKe07BiiYYBlwM&_nc_zt=23&_nc_ht=scontent.fpnh24-1.fna&_nc_gid=NctBHm3EJg-TXi0e2ieg8w&oh=00_Afhi3dj-YhA2GVFbOta_85gALu4xCMTjAuk7coPd78ddhA&oe=690CCF33" alt="Fleet 1">
+          <img class="fade-in" src="https://scontent.fpnh24-1.fna.fbcdn.net/v/t39.30808-6/572300024_122105955843063039_4702793900109691844_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeF3VRduEMiH9q34FAB1-uh5_z5mZyTpMG7_PmZnJOkwbpCUhf_tOyfwmPvSdT4OVpu-5H9Ra35_xYymVicEUIdJ&_nc_ohc=rb4q6FzUpR8Q7kNvwGBcmks&_nc_oc=AdmPbU82_0bgfJotvo5_4Z4qEtq6tr3EjzRSiH2S5mNBKS5EsLeK-shqPpNJJ2IRmcY&_nc_zt=23&_nc_ht=scontent.fpnh24-1.fna&_nc_gid=5F4DbRPPGo4g7oD24y7x7g&oh=00_Afhos5vG7aSm-sLtQWvGwfxq70WbcqQQm2y6gWvG51qbHQ&oe=690CF309" alt="Fleet 2">
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section" aria-label="Gallery">
+      <div class="container">
+        <h3 class="fade-in">Gallery</h3>
+        <p class="muted fade-in">Photos from our operations</p>
+        <div class="gallery-grid" role="list">
+          <img role="listitem" class="fade-in gallery-item" src="https://scontent.fpnh24-1.fna.fbcdn.net/v/t39.30808-6/561813586_122099520909063039_6493472705383341403_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeF6lC3Sg_BKbZM5Ok_OyF0keSGici3sogB5IaJyLeyiALpPPPxRfnWISxR5G8EbkFbFxy52aXINOgG25kDmB_h4&_nc_ohc=TgLuBe0HlmUQ7kNvwFt5QYm&_nc_oc=Adm4DoWwk4BRkHPU6PV0kETeFgsJ4ZOiWdaj9AsuRO6EtGnp58yx_CKe07BiiYYBlwM&_nc_zt=23&_nc_ht=scontent.fpnh24-1.fna&_nc_gid=NctBHm3EJg-TXi0e2ieg8w&oh=00_Afhi3dj-YhA2GVFbOta_85gALu4xCMTjAuk7coPd78ddhA&oe=690CCF33" alt="Truck fleet">
+          <img role="listitem" class="fade-in gallery-item" src="https://scontent.fpnh24-1.fna.fbcdn.net/v/t39.30808-6/572300024_122105955843063039_4702793900109691844_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeF3VRduEMiH9q34FAB1-uh5_z5mZyTpMG7_PmZnJOkwbpCUhf_tOyfwmPvSdT4OVpu-5H9Ra35_xYymVicEUIdJ&_nc_ohc=rb4q6FzUpR8Q7kNvwGBcmks&_nc_oc=AdmPbU82_0bgfJotvo5_4Z4qEtq6tr3EjzRSiH2S5mNBKS5EsLeK-shqPpNJJ2IRmcY&_nc_zt=23&_nc_ht=scontent.fpnh24-1.fna&_nc_gid=5F4DbRPPGo4g7oD24y7x7g&oh=00_Afhos5vG7aSm-sLtQWvGwfxq70WbcqQQm2y6gWvG51qbHQ&oe=690CF309" alt="YSB yard">
+          <img role="listitem" class="fade-in gallery-item" src="https://scontent-nrt1-2.xx.fbcdn.net/v/t39.30808-6/574541543_122105955861063039_7620476384229267786_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHOmJM-DIYD5qASO_dZ6Ras8qJrbY4xVNzyomttjjFU3A1t9C33rVyYdJ-JgC7tRPIulsm4f4A-yklZEcH1P9Fw&_nc_ohc=RQ08VRRbPaoQ7kNvwGYImD8&_nc_oc=AdnhUbIu-_Hpt1ghDZ30D7avzw59RH9LJNdbhRGMYqqTbe9Nmdyl-iQErnrNK3XNSB1PFrvsZvLnnshrCiXdqLwo&_nc_zt=23&_nc_ht=scontent-nrt1-2.xx&_nc_gid=uzbzrt5RgPRZ6oOJQr6REw&oh=00_Afi8hF8T2kw2HfVNMuOJmJwNht8USu5X2TjdCBbkSyaGQQ&oe=690CCDF4" alt="Another YSB photo">
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section" aria-label="About">
+      <div class="container">
+        <h3 class="fade-in">About Y.S.B Transportation</h3>
+        <p class="fade-in">Founded in 2019, Y.S.B Transportation Co., Ltd provides import and export logistics around the world. We combine experience, local knowledge, and trusted partners to deliver tailored supply-chain solutions. Our focus is simple: get your goods where they need to be, on time and intact.</p>
+      </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <section id="partners" class="section" aria-label="Partners & Clients">
+      <div class="container">
+        <h3 class="fade-in">Partners & Clients</h3>
+        <p class="muted fade-in">We work with logistics partners and clients across multiple industries.</p>
+        <div class="partners fade-in" aria-hidden="false">
+          <div class="partner-logo">Partner A</div>
+          <div class="partner-logo">Partner B</div>
+          <div class="partner-logo">Partner C</div>
+          <div class="partner-logo">Partner D</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section" aria-label="Testimonials">
+      <div class="container">
+        <h3 class="fade-in">Testimonials</h3>
+        <div class="cards">
+          <div class="testimonial fade-in"><strong>“Fast and reliable — Y.S.B saved our shipment!”</strong><p class="muted">— Local Importer</p></div>
+          <div class="testimonial fade-in"><strong>“Great communication and tracking from start to finish.”</strong><p class="muted">— E-commerce Partner</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section" aria-label="Contact">
+      <div class="container">
+        <h3 class="fade-in">Contact Us</h3>
+        <div class="contact-grid">
+          <div>
+            <p><strong>Phone:</strong> +855 096 799 9930</p>
+            <p><strong>Email:</strong> info@ysbtransport.com</p>
+            <p><strong>Facebook:</strong> <a href="https://facebook.com/YSBTransportationCoLtd" target="_blank" rel="noopener">YSB Transportation Co., Ltd</a></p>
+            <p class="muted">Office hours: Mon–Sat, 08:00–18:00</p>
+            <p class="muted">Founded 2019</p>
+          </div>
+
+          <form id="contactForm" class="contact-form" onsubmit="event.preventDefault();submitForm();">
+            <label>Name<input name="name" required></label>
+            <label>Email or Phone<input name="contact" required></label>
+            <label>Message<textarea name="message" rows="4" required></textarea></label>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Send Message</button>
+              <button class="btn" type="button" onclick="document.getElementById('chat-toggle').click()">Ask AI</button>
+            </div>
+            <p id="form-status" class="muted" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Y.S.B Transportation Co., Ltd</div>
+      <div><a class="socials" href="https://facebook.com/YSBTransportationCoLtd" target="_blank" rel="noopener">Facebook</a></div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true" onclick="closeLightbox(event)">
+    <img id="lightbox-image" alt="Expanded image">
+  </div>
+
+  <!-- Chat (button opens) -->
+  <button id="chat-toggle" class="chat-toggle" title="Chat with YSB">💬</button>
+  <div id="chat" class="chat" aria-hidden="true" role="dialog" aria-label="YSB assistant">
+    <div class="chat-header"><strong>YSB Assistant</strong><button onclick="toggleChat()" aria-label="Close chat">✕</button></div>
+    <div id="messages" class="chat-messages" role="log" aria-live="polite"><div class="msg bot">Hi — ask me about services, quotes, or shipments.</div></div>
+    <form class="chat-form" onsubmit="event.preventDefault();sendChat();">
+      <input id="chat-input" placeholder="Ask a question..." autocomplete="off" required>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script>
+    // small interactive helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // animate-on-scroll: reveal .fade-in items once
+    (function(){
+      const obs = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+        });
+      }, {threshold: 0.12});
+      document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+    })();
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    function openLightbox(src, alt){
+      lightboxImage.src = src;
+      lightboxImage.alt = alt || 'Image';
+      lightbox.classList.add('show');
+      lightbox.setAttribute('aria-hidden','false');
+    }
+    function closeLightbox(e){
+      if(e.type === 'click' && e.target !== lightbox) return;
+      lightbox.classList.remove('show');
+      lightbox.setAttribute('aria-hidden','true');
+      lightboxImage.src = '';
+    }
+    document.addEventListener('keydown', (ev)=>{ if(ev.key==='Escape'){ lightbox.classList.remove('show'); lightbox.setAttribute('aria-hidden','true'); }});
+    // wire gallery items
+    function wireGallery(){
+      document.querySelectorAll('.gallery-item').forEach(img=>{
+        if(img.dataset.wired) return;
+        img.style.cursor='zoom-in';
+        img.addEventListener('click', ()=> openLightbox(img.src, img.alt));
+        img.dataset.wired = '1';
+      });
+    }
+    window.addEventListener('load', wireGallery);
+
+    // Chat assistant behavior
+    const chatToggle = document.getElementById('chat-toggle');
+    const chat = document.getElementById('chat');
+    const messages = document.getElementById('messages');
+    const chatInput = document.getElementById('chat-input');
+
+    function toggleChat(){
+      const hidden = chat.getAttribute('aria-hidden') === 'true';
+      chat.setAttribute('aria-hidden', hidden ? 'false' : 'true');
+      if(hidden) setTimeout(()=>chatInput.focus(),120);
+    }
+    chatToggle.addEventListener('click', toggleChat);
+
+    function addMessage(who, text){
+      const d = document.createElement('div');
+      d.className = 'msg ' + who;
+      d.textContent = text;
+      messages.appendChild(d);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function sendChat(){
+      const t = chatInput.value.trim();
+      if(!t) return;
+      addMessage('user', t);
+      chatInput.value = '';
+      const typing = document.createElement('div'); typing.className='msg bot'; typing.textContent='...';
+      messages.appendChild(typing);
+      messages.scrollTop = messages.scrollHeight;
+      setTimeout(()=> {
+        messages.removeChild(typing);
+        const resp = cannedReply(t);
+        addMessage('bot', resp);
+      }, 500 + Math.min(1200, t.length * 30));
+    }
+
+    function cannedReply(text){
+      const t = text.toLowerCase();
+      if(t.includes('quote')||t.includes('price')) return 'To get a quote, tell us origin, destination, weight/volume and preferred shipping (air/sea/land).';
+      if(t.includes('track')||t.includes('tracking')) return 'Please provide your shipment or booking number and we will check the status.';
+      if(t.includes('service')||t.includes('services')) return 'We offer freight forwarding, customs clearance, warehousing and door-to-door delivery.';
+      if(t.includes('contact')||t.includes('phone')) return 'Phone: +855 096 799 9930 — Email: info@ysbtransport.com';
+      if(t.includes('hi')||t.includes('hello')||t.includes('hey')) return 'Hello! How can we assist you today?';
+      return 'Thanks — we received your question. For detailed help, please use the contact form and we will reply shortly.';
+    }
+
+    // Contact form placeholder
+    const formStatus = document.getElementById('form-status');
+    function submitForm(){
+      formStatus.textContent = 'Message sent — we will contact you shortly.';
+      // small fade
+      formStatus.style.opacity = 0;
+      setTimeout(()=> formStatus.style.opacity = 1, 40);
+      // To send real email: integrate with Formspree, Netlify Forms, or your backend.
+    }
+  </script>
+</body>
+</html>
